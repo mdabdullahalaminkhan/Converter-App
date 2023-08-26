@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding:0;
+        }
+
+        #container {
+            height: 100vh;
+            background-color: blanchedalmond;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container > div {
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container > div > div {
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <div>
+                <label for="milesInput"><h3>Length Converter</h3>(Miles to Kilometers) <br></label><br>
+                <input type="number"
+                       id="milesInput"
+                       placeholder="Miles"
+                       oninput="milesToKilometers(this.value)"
+                       onchange="milesToKilometers(this.value)"
+                   >
+            </div>
+            <div>
+                <br>
+                <h3 id="kilometersResult"> Result : </h3>
+            </div>
+        </div>
+        </div>
+        
+
+    <script>
+        function milesToKilometers (userInput){
+            document.getElementById("kilometersResult").innerHTML = `${userInput / 0.62137} Kilometers`;
+        }
+    </script>
+</body>
+</html>

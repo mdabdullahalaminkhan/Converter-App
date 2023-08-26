@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding:0;
+        }
+
+        #container {
+            height: 100vh;
+            background-color: blanchedalmond;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container > div {
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container > div > div {
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <div>
+                <label for="fahrenheitInput"><h3>Temperature Converter</h3>(Fahrenheit to Celcius) <br></label><br>
+                <input type="number"
+                       id="fahrenheitInput"
+                       placeholder="Fahrenheit"
+                       oninput="fahrenheitToCelcius(this.value)"
+                       onchange="fahrenheitToCelcius(this.value)"
+                   >
+            </div>
+            <div>
+                <br>
+                <h3 id="celciusResult"> Result : </h3>
+            </div>
+        </div>
+        </div>
+        
+
+    <script>
+        function fahrenheitToCelcius(userInput){
+            document.getElementById("celciusResult").innerHTML = `${(userInput-32) / 1.8} Celcius`;
+        }
+    </script>
+</body>
+</html>
